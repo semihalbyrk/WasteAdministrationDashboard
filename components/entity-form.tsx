@@ -10,7 +10,6 @@ import {
   type TransporterLegalCapability,
   type ReceiverFacilityType,
 } from "@/lib/entities-store"
-import { useApp } from "@/lib/store"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -36,7 +35,6 @@ const RECEIVER_FACILITY_TYPES: ReceiverFacilityType[] = ["Processor", "Transfer 
 
 export function EntityForm({ entityId }: EntityFormProps) {
   const { entities, addEntity, updateEntity } = useEntities()
-  const { wasteTypes } = useApp()
   const router = useRouter()
   const existingEntity = entityId ? entities.find((e) => e.id === entityId) : null
 
